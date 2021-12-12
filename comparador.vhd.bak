@@ -1,0 +1,31 @@
+library ieee; 
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all; 
+
+entity practica4 is  
+	Port(A: in STD_LOGIC;
+			B: in STD_LOGIC;
+			MAYOR: out STD_LOGIC;
+			MENOR: out STD_LOGIC;
+			IGUAL: out STD_LOGIC);
+end practica4;
+architecture behavioral of practica4 is
+begin
+PROCESS (A,B)
+BEGIN
+	if(A>B) then
+		MAYOR<='1';
+				MENOR<='0';
+				IGUAL<='0';
+	elsif(A<B) then
+		MAYOR<='0';
+				MENOR<='1';
+				IGUAL<='0';
+	elsif(A=B) then
+		MAYOR<='0';
+				MENOR<='0';
+				IGUAL<='1';
+			END IF;
+end process;
+end behavioral; 
